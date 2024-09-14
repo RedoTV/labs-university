@@ -1,0 +1,46 @@
+.text_field {
+  flex-direction: column;
+  max-width: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.left-block {
+  flex-direction: column;
+  max-width: 100%;
+  width: 70%;
+}
+
+.tasks_nav {
+  align-self: self-start;
+  width: 30%;
+}
+
+.ul {
+  list-style-type: none;
+}
+
+.li {
+  text-align: center;
+  width: max-content;
+}
+
+.m_left {
+  margin-left: 10px;
+}
+
+.m_top {
+  margin-top: 10px;
+}
+
+.active {
+  background-color: rgb(175, 97, 97);
+}

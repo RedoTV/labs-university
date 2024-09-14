@@ -1,3 +1,14 @@
 body {
+  height: 100%;
   margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* занимаем всю высоту */
+}
+
+main {
+  flex: 1; /* разрешает наполнению main расти и спускать футер */
 }

@@ -1,10 +1,11 @@
+import styles from './Footer.module.css'
+
 export default function Footer() {
-    return (
-      <>
-        <footer>
-            <p>Copyright</p>
-        </footer>
-      </>
-    )
-  }
-  
+  return (
+    <>
+      <footer className={styles.footer}>
+        <p>Copyright</p>
+      </footer>
+    </>
+  )
+}

@@ -8,7 +8,7 @@ export default function Layout() {
       <Header />
       <main>
         <Outlet />
-      </main>
+      </main >
       <Footer />
     </>
   )
