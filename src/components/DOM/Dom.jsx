@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import styles from './Dom.module.css'
 
 export default function Dom() {
+    const [currentTask, setCurrentTask] = useState(-1)
+
+    const tasks = ['Задание 1', 'Задание 2',]
+
     const [dialogResult, setDialogResult] = useState('');
     const [promptInput, setPromptInput] = useState('');
     const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+    const navigate = useNavigate();
 
     const openNewWindow = () => {
         window.open('https://example.com', '_blank');
@@ -44,26 +51,48 @@ export default function Dom() {
         document.getElementById(elementId).innerText = newContent;
     };
 
-    const [namePosition, setNamePosition] = useState({ x: 0, y: 0 });
-
     useEffect(() => {
-        const interval = setInterval(() => {
-            setNamePosition((prevPosition) => ({
-                x: prevPosition.x + 1,
-                y: prevPosition.y + 1,
-            }));
+        const handleResize = () => {
+            setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+        };
 
-            if (namePosition.x >= window.innerWidth - 200 || namePosition.y >= window.innerHeight - 50) {
-                setNamePosition({ x: 0, y: 0 });
-            }
-        }, 1);
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-        return () => clearInterval(interval);
-    }, [namePosition]);
+    function firstTask() {
+        setCurrentTask(0)
+        navigate('floatingname')
+    }
+
+    function secondTask() {
+        setCurrentTask(1)
+        navigate('movingname')
+    }
 
     return (<>
         <div>
-            <h1>Пример приложения на React</h1>
+            <div className={styles.tasks_nav}>
+                <ul className={styles.ul}>
+                    <li className={styles.li}>
+                        <button
+                            className={`${currentTask === 0 ? styles.active : ''} ${styles.full_height}`}
+                            onClick={() => { firstTask() }}>
+                            {tasks[0]}
+                        </button>
+                    </li>
+                    <li className={styles.li}>
+                        <button
+                            className={`${currentTask === 1 ? styles.active : ''} ${styles.full_height}`}
+                            onClick={() => { secondTask() }}>
+                            {tasks[1]}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
             <button onClick={openNewWindow}>Создать новое окно</button>
             <button onClick={showAlert}>Показать Alert</button>
             <button onClick={showConfirm}>Показать Confirm</button>
@@ -93,19 +122,11 @@ export default function Dom() {
                 <h2>Размер окна:</h2>
                 <p>Ширина: {windowSize.width}px, Высота: {windowSize.height}px</p>
             </div>
+        </div>
 
-            <div
-                style={{
-                    position: 'absolute',
-                    left: namePosition.x,
-                    top: namePosition.y,
-                    fontSize: '48px',
-                    fontWeight: 'bold',
-                    color: 'blue',
-                }}
-            >
-                Вадим
-            </div>
+        <div>
+            <h1>Задания</h1>
+            <Outlet />
         </div>
     </>)
 }

@@ -1,0 +1,33 @@
+.tasks_nav {
+  align-self: self-start;
+  width: 30%;
+  margin-bottom: 40px;
+}
+
+.ul {
+  list-style-type: none;
+  display: flex;
+  min-height: 100%;
+}
+
+.li {
+  text-align: center;
+  width: max-content;
+  flex: 1;
+}
+
+.full_height {
+  min-height: 100%;
+}
+
+.m_left {
+  margin-left: 10px;
+}
+
+.m_top {
+  margin-top: 10px;
+}
+
+.active {
+  background-color: rgb(175, 97, 97);
+}

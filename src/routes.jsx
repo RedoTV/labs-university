@@ -8,6 +8,8 @@ import String from "./components/String/String";
 import Forms from "./components/Forms/Forms";
 import Data from "./components/Data/Data";
 import Object from "./components/Object/Object";
+import FloatingName from "./components/DOM/FloatingName";
+import MovingName from "./components/DOM/MovingName";
 
 export const routes = createBrowserRouter([
   {
@@ -24,7 +26,17 @@ export const routes = createBrowserRouter([
       },
       {
         path: 'dom',
-        element: <Dom />
+        element: <Dom />,
+        children: [
+          {
+            path: 'floatingname',
+            element: <FloatingName />
+          },
+          {
+            path: 'movingname',
+            element: <MovingName />
+          }
+        ]
       },
       {
         path: 'crossword',
