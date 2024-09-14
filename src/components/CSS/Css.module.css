@@ -1,0 +1,297 @@
+.tasks_nav {
+  align-self: self-start;
+  width: 30%;
+  margin-bottom: 40px;
+}
+
+.ul {
+  list-style-type: none;
+  display: flex;
+  min-height: 100%;
+}
+
+.li {
+  text-align: center;
+  width: max-content;
+  flex: 1;
+}
+
+.full_height {
+  min-height: 100%;
+}
+
+.m_left {
+  margin-left: 10px;
+}
+
+.m_top {
+  margin-top: 10px;
+}
+
+.active {
+  background-color: rgb(175, 97, 97);
+}
+
+.nb {
+  border: 2px solid #000;
+  width: 50%;
+  float: left;
+  margin-right: 20px;
+}
+
+/* Задание 2: Границы */
+.bordered_paragraph {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  padding: 10px;
+}
+
+/* Задание 3: Подложка и надпись */
+.ground {
+  font-size: 50px;
+  color: lightgrey;
+  text-align: center;
+  position: relative;
+}
+
+.poster {
+  color: brown;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Задание 4: Колонки */
+.columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 48%;
+}
+
+.drop_cap {
+  font-size: 40px;
+  float: left;
+  margin-right: 5px;
+}
+
+/* Задание 5: Области с линейками прокрутки */
+.scrollable_area {
+  border: 1px solid #ccc;
+  height: 100px;
+  overflow-y: scroll;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+/* Задание 6: Преобразование элементов */
+.element_transformation {
+  margin: 20px 0;
+}
+
+.inline_element {
+  display: inline;
+}
+
+.block_element {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Задание 7: z-index и позиционирование */
+.positioning_example {
+  position: relative;
+  margin: 20px 0;
+}
+
+.name {
+  font-size: 40px;
+  color: black;
+  position: relative;
+  z-index: 3;
+}
+
+.overlapping_box {
+  position: absolute;
+  background-color: lightblue;
+  padding: 20px;
+  margin: 10px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.menu {
+  background-color: #333;
+  color: white;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  padding: 15px;
+  cursor: pointer;
+}
+
+/* Стили при наведении */
+.menu li:hover {
+  background-color: #555;
+  transition: background-color 0.3s;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* Задание 3: Подложка и надпись */
+.ground {
+  font-size: 50px;
+  color: lightgrey;
+  text-align: center;
+  position: relative;
+}
+
+.poster {
+  color: brown;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Задание 4: Колонки */
+@media (min-width: 600px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content p {
+    flex: 1;
+    margin: 10px;
+  }
+}
+
+/* Задание 1: Медиазапросы */
+@media (max-width: 800px) {
+  .menu ul {
+    flex-direction: column; /* Вертикальное меню */
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    flex-direction: column; /* Одноколонный текст */
+  }
+
+  .content p {
+    font-size: 14px; /* Уменьшение шрифта */
+  }
+}
+
+/* Задание 2: Стили при наведении для других элементов */
+.content p:hover {
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+/* 3 задание */
+.block {
+  padding: 20px;
+  border: 2px solid hsl(210, 100%, 50%);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 20px auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Уменьшение размера блока и усечение текста */
+@media (max-width: 800px) {
+  .block {
+    max-width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .block {
+    font-size: 12px;
+  }
+}
+
+/* Селекторы атрибутов */
+[data-type="highlight"] {
+  background-color: hsla(60, 100%, 50%, 0.3);
+}
+
+/* Селекторы по началу, середине и концу атрибута */
+[data-value^="start"] {
+  border: 2px dashed hsl(120, 100%, 50%);
+}
+
+[data-value*="middle"] {
+  border: 2px dotted hsl(0, 100%, 50%);
+}
+
+[data-value$="end"] {
+  border: 2px solid hsl(240, 100%, 50%);
+}
+
+/* Структурные псевдоклассы */
+.text:first-child {
+  font-weight: bold;
+}
+
+.text:last-child {
+  font-style: italic;
+}
+
+.text:nth-child(even) {
+  color: hsl(120, 100%, 50%);
+}
+
+.text:nth-child(odd) {
+  color: hsl(0, 100%, 50%);
+}
+
+.text:nth-of-type(3) ~ .text {
+  text-decoration: underline;
+}
+
+.text:not(:nth-child(2)) {
+  opacity: 0.8;
+}
+
+/* Разные способы отображения с border-radius */
+.rounded {
+  border-radius: 30px;
+}
+
+.square {
+  border-radius: 0;
+}
+
+.soft-rounded {
+  border-radius: 15px;
+}
