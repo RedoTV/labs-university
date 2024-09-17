@@ -36,11 +36,12 @@
   border: 2px solid #000;
   width: 50%;
   float: left;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 /* Задание 2: Границы */
 .bordered_paragraph {
+  width: fit-content;
   border-left: 2px solid #000;
   border-right: 2px solid #000;
   padding: 10px;
@@ -91,6 +92,14 @@
 /* Задание 6: Преобразование элементов */
 .element_transformation {
   margin: 20px 0;
+}
+
+.element_transformation > div {
+  background-color: #007bff;
+}
+
+.element_transformation > span {
+  background-color: #00ff84;
 }
 
 .inline_element {

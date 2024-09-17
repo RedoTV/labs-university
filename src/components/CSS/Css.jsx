@@ -9,7 +9,6 @@ export default function Css() {
     'Flexbox, переключение разрешения изображений'
   ]
 
-
   return (<>
     <div className={styles.tasks_nav}>
       <ul className={styles.ul}>
@@ -32,6 +31,7 @@ export default function Css() {
           <div className={styles.nb}>
             Обтекание: этот элемент занимает половину ширины окна браузера и обтекается другими элементами.
           </div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam magni, officia explicabo natus maiores iusto nisi laborum architecto dignissimos accusantium ullam quasi reiciendis nihil rerum commodi omnis numquam facilis.</div>
 
           {/* Задание 2: Границы */}
           <p className={styles.bordered_paragraph}>
@@ -40,6 +40,7 @@ export default function Css() {
 
           {/* Задание 3: Подложка и надпись */}
           <div className={styles.ground}>
+            Подложка
             <div className={styles.poster}>Надпись поверх подложки</div>
           </div>
 
@@ -47,11 +48,15 @@ export default function Css() {
           <div className={styles.columns}>
             <div className={styles.column}>
               <span className={styles.drop_cap}>A</span>
-              <p>Это текст в первой колонке. Он будет продолжаться и занимать место в колонке.</p>
+              <p>Это текст в первой колонке.</p>
             </div>
             <div className={styles.column}>
               <span className={styles.drop_cap}>B</span>
-              <p>Это текст во второй колонке. Он также будет занимать место в колонке.</p>
+              <p>Это текст во второй колонке.</p>
+            </div>
+            <div className={styles.column}>
+              <span className={styles.drop_cap}>C</span>
+              <p>Это текст в третьей колонке.</p>
             </div>
           </div>
 
@@ -79,9 +84,15 @@ export default function Css() {
           </div>
 
           {/* Задание 6: Преобразование элементов */}
+          <h3>До преобразования</h3>
           <div className={styles.element_transformation}>
-            <span className={styles.inline_element}>Я строчный элемент</span>
-            <div className={styles.block_element}>Я блочный элемент</div>
+            <span>1. Я строчный элемент</span>
+            <div>2. Я блочный элемент</div>
+          </div>
+          <h3>После преобразования</h3>
+          <div className={styles.element_transformation}>
+            <span className={styles.block_element}>1. Я строчный элемент</span>
+            <div className={styles.inline_element}>2. Я блочный элемент</div>
           </div>
 
           {/* Задание 7: z-index и позиционирование */}
