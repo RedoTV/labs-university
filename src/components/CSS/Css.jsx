@@ -62,7 +62,7 @@ export default function Css() {
 
           {/* Задание 5: Области с линейками прокрутки */}
           <div className={styles.scrollable_area}>
-            <h2>Область с прокруткой 1</h2>
+            <h2>Область с вертикальной прокруткой</h2>
             <div>
               <p>Много текста для демонстрации прокрутки...</p>
               <p>Много текста для демонстрации прокрутки...</p>
@@ -73,8 +73,8 @@ export default function Css() {
           </div>
 
           <div className={styles.scrollable_area}>
-            <h2>Область с прокруткой 2</h2>
-            <div>
+            <h2>Область с горизонтальной прокруткой</h2>
+            <div className={styles.horizontalScroll}>
               <p>Еще много текста для демонстрации прокрутки...</p>
               <p>Еще много текста для демонстрации прокрутки...</p>
               <p>Еще много текста для демонстрации прокрутки...</p>
@@ -96,10 +96,10 @@ export default function Css() {
           </div>
 
           {/* Задание 7: z-index и позиционирование */}
-          <div className={styles.positioning_example}>
-            <div className={styles.name}>Фамилия</div>
-            <div className={styles.overlapping_box} style={{ zIndex: 1 }}>Первый слой</div>
-            <div className={styles.overlapping_box} style={{ zIndex: 2 }}>Второй слой</div>
+          <div className={styles.container}>
+            <div className={styles.layer1}>Зинович</div>
+            <div className={styles.layer2}>Зинович</div>
+            <div className={styles.layer3}>Зинович</div>
           </div>
         </div>
       </>
@@ -117,42 +117,126 @@ export default function Css() {
 
         {/* Текст с колонками */}
         <div className={styles.content}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+          <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, quod dolorum! Cum obcaecati at, accusantium debitis rem labore? Vero nisi molestias porro aliquam excepturi ullam neque! Atque incidunt ducimus veniam!</h4>
+          <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ad vitae praesentium alias repellendus atque adipisci. Quaerat, excepturi corporis eveniet ipsa voluptate at optio vero, reiciendis nesciunt harum, possimus obcaecati.</h5>
+          <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, praesentium quae illum aut iusto corporis. Enim natus voluptatem sapiente numquam ea labore dolores quidem optio unde culpa, harum laudantium nobis!</h6>
+          <p>При уменьшении ширины окна браузера текст автоматически преобразуется в одноколонный формат без буквицы.</p>
         </div>
 
-        {/* Пример с подложкой и надписью */}
-        <div className={styles.ground}>
-          <div className={styles.poster}>Надпись поверх подложки</div>
-        </div>
       </>
     }
     {currentTask == 2 &&
       <>
-        <div className={styles.block}>
-          <p className={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+        <div className={styles.container}>
+          <div className={styles.content}>
+            {/* Блочный элемент с усечением текста */}
+            <div className={styles.textBlock}>
+              <p className={styles.truncate}>
+                Это длинный текст, который будет усечен при уменьшении размера окна браузера.
+                При достижении определенной ширины окна текст будет обрезан с добавлением многоточия.
+              </p>
+            </div>
+
+            {/* Пример использования селекторов атрибутов */}
+            <div data-type="primary" className={styles.primaryButton}>Primary Button</div>
+            <div data-type="secondary" className={styles.secondaryButton}>Secondary Button</div>
+            <div data-type="mid-value" className={styles.midValue}>Middle Value</div>
+            <div data-type="customary" className={styles.customElement}>Custom Element</div>
+
+            {/* Список элементов для демонстрации псевдоклассов */}
+            <ul className={styles.list}>
+              <li className={styles.listItem}>Item 1</li>
+              <li className={styles.listItem}>Item 2</li>
+              <li className={styles.listItem}>Item 3</li>
+              <li className={styles.listItem}>Item 4</li>
+              <li className={styles.listItem}>Item 5</li>
+              <li className={styles.listItem}>Item 6</li>
+              <li className={styles.listItem}>Item 7</li>
+              <li className={styles.listItem}>Item 8</li>
+              <li className={styles.listItem}>Item 9</li>
+              <li className={styles.listItem}>Item 10</li>
+            </ul>
+
+            {/* Блоки с разными способами отображения */}
+            <div className={`${styles.textBlock} ${styles.roundedCorners}`}>Rounded Corners</div>
+            <div className={`${styles.textBlock} ${styles.roundedSmooth}`}>Rounded Smooth</div>
+            <div className={`${styles.textBlock} ${styles.roundedEllipse}`}>Rounded Ellipse</div>
+          </div>
         </div>
       </>
     }
     {currentTask == 3 &&
       <>
+        <div className={styles.container}>
+          {/* Объемная надпись */}
+          <h1 className={styles.volumeText}>Объемная Надпись</h1>
+
+          {/* Буквица (первый способ) */}
+          <div className={styles.dropCap}>
+            <span className={styles.initial}>Б</span>
+            <span>уквица с использованием псевдокласса и теней.</span>
+          </div>
+
+          {/* Буквица (второй способ) */}
+          <div className={styles.dropCapShadow}>
+            <span className={styles.initial}>Б</span>
+            <span>уквица с тенью.</span>
+          </div>
+
+          {/* Наложение нескольких теней на текст */}
+          <h2 className={styles.multipleShadows}>Текст с несколькими тенями</h2>
+
+          {/* Градиентные фоны */}
+          <div className={styles.gradient1}>Градиент 1</div>
+          <div className={styles.gradient2}>Градиент 2</div>
+          <div className={styles.gradient3}>Градиент 3</div>
+
+          {/* Изображения с фильтрами */}
+          <img src="https://via.placeholder.com/150" alt="Example 1" className={styles.filter1} />
+          <img src="https://via.placeholder.com/150" alt="Example 2" className={styles.filter2} />
+          <img src="https://via.placeholder.com/150" alt="Example 3" className={styles.filter3} />
+        </div>
+
       </>
     }
     {currentTask == 4 &&
       <>
+        <div className={styles.container}>
+          <h1>Переходы и 2D-преобразования</h1>
+
+          {/* Переходы */}
+          <div className={styles.transitionBox1}>Переход 1</div>
+          <div className={styles.transitionBox2}>Переход 2</div>
+          <div className={styles.transitionBox3}>Переход 3</div>
+
+          {/* 2D-преобразования */}
+          <div className={styles.transformContainer}>
+            <div className={styles.scale}>Масштабирование</div>
+            <div className={styles.translate}>Перемещение</div>
+            <div className={styles.rotate}>Вращение</div>
+            <div className={styles.skew}>Наклон</div>
+            <div className={styles.center}>Центрирование</div>
+          </div>
+        </div>
       </>
     }
     {currentTask == 5 &&
       <>
+        <div className={styles.container}>
+          {/* Блочный элемент с выравниванием текста */}
+          <div className={styles.centeredBlock}>
+            <h1>Центрированный текст</h1>
+          </div>
+
+          {/* Список с элементами */}
+          <ul className={`${styles.flexList} ${styles.reverse}`}>
+            <li className={styles.listElement}>Элемент 1</li>
+            <li className={styles.listElement}>Элемент 2</li>
+            <li className={styles.listElement}>Элемент 3</li>
+            <li className={`${styles.listElement} ${styles.rightAlign}`}>Элемент 4 (смещен вправо)</li>
+            <li className={styles.listElement}>Элемент 5</li>
+          </ul>
+        </div>
       </>
     }
   </>)

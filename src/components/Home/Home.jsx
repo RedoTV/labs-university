@@ -122,7 +122,7 @@ export default function Home() {
           }
           {currentTask == 3 &&
             <div >
-              <table >
+              <table className={styles.table}>
                 <thead>
                   <tr>
                     <th colSpan="2">Информация о студентах</th>
@@ -240,14 +240,15 @@ export default function Home() {
             </div>
           }
           {currentTask == 6 &&
-            <div className={styles.m_left}><details>
-              <summary>Полезные свойства воды</summary>
-              <p>
-                Вода — это основной элемент, необходимый для жизни. Она помогает поддерживать нормальную температуру тела,
-                участвует в пищеварении и выводе токсинов из организма. Регулярное потребление воды способствует
-                улучшению состояния кожи и поддержанию здоровья суставов.
-              </p>
-            </details>
+            <div className={styles.m_left}>
+              <details >
+                <summary >Полезные свойства воды</summary>
+                <p>
+                  Вода — это основной элемент, необходимый для жизни. Она помогает поддерживать нормальную температуру тела,
+                  участвует в пищеварении и выводе токсинов из организма. Регулярное потребление воды способствует
+                  улучшению состояния кожи и поддержанию здоровья суставов.
+                </p>
+              </details>
 
               <details>
                 <summary>Значение воды в природе</summary>
@@ -271,8 +272,11 @@ export default function Home() {
             </div>}
 
           {currentTask == 8 &&
-            <Frame />
+            <div className={styles.centered_iframe}>
+              <Frame />
+            </div>
           }
+
         </div>
         <div className={styles.tasks_nav}>
           <ul className={styles.ul}>

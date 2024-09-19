@@ -44,3 +44,28 @@
 .active {
   background-color: rgb(175, 97, 97);
 }
+
+.centered_iframe {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  background-color: antiquewhite;
+}
+
+.table {
+  border: 1px solid salmon;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.table > thead > tr > th {
+  border: 2px solid saddlebrown;
+}
+
+.table > tbody > tr > td {
+  border: 2px solid saddlebrown;
+}
+
+.table > tfoot > tr > td {
+  border: 2px solid saddlebrown;
+}
