@@ -35,6 +35,10 @@ export default function Home() {
     {
       text: "Будьте тем изменением, которое вы хотите видеть в мире.",
       author: "Махатма Ганди"
+    },
+    {
+      text: "Будьте тем изменением, которое вы хотите видеть в мире.",
+      author: "Махатма Ганди"
     }
   ];
 
@@ -83,7 +87,10 @@ export default function Home() {
     <>
       <div className={styles.flexbox}>
         <div className={styles.text_field}>
+
           {currentTask == 0 && <pre>{poem}</pre>}
+
+
           {currentTask == 1 &&
             <div>
               {quotes.map((quote, index) => (
@@ -93,6 +100,8 @@ export default function Home() {
                 </blockquote>
               ))}
             </div>}
+
+
           {currentTask == 2 &&
             <div>
               <h2>Нумерованный список (Список литературы)</h2>
@@ -120,6 +129,8 @@ export default function Home() {
               </dl>
             </div>
           }
+
+
           {currentTask == 3 &&
             <div >
               <table className={styles.table}>
@@ -259,6 +270,8 @@ export default function Home() {
                 </p>
               </details>
             </div>}
+
+            
           {currentTask == 7 &&
             <div className={styles.m_top}>
               <img src={four} alt="Логотип" useMap="#logo-map" style={{ width: '300px', height: '300px' }} />

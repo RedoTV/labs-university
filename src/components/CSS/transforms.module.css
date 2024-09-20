@@ -1,0 +1,122 @@
+/* Задание 5 */
+.transitionBox1,
+.transitionBox2,
+.transitionBox3 {
+  width: 200px;
+  height: 100px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: all 0.5s ease; /* Переход */
+}
+
+.transitionBox1 {
+  background-color: #3498db; /* Цвет фона для первого перехода */
+}
+
+.transitionBox1:hover {
+  background-color: #2980b9; /* Цвет при наведении */
+  transform: scale(1.1); /* Масштабирование при наведении */
+}
+
+.transitionBox2 {
+  background-color: #e74c3c; /* Цвет фона для второго перехода */
+}
+
+.transitionBox2:hover {
+  background-color: #c0392b; /* Цвет при наведении */
+  transform: translateY(-10px); /* Перемещение при наведении */
+}
+
+.transitionBox3 {
+  background-color: #2ecc71; /* Цвет фона для третьего перехода */
+}
+
+.transitionBox3:hover {
+  background-color: #27ae60; /* Цвет при наведении */
+  transform: rotate(10deg); /* Вращение при наведении */
+}
+
+/* Стили для контейнера с преобразованиями */
+.transformContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Преобразования */
+.scale,
+.translate,
+.rotate,
+.skew,
+.center {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+/* Масштабирование */
+.scale {
+  background-color: #3498db; /* Цвет фона */
+  transition: transform 0.5s; /* Переход для масштабирования */
+}
+
+.scale:hover {
+  transform: scale(1.5); /* Масштабирование при наведении */
+}
+
+/* Перемещение */
+.translate {
+  background-color: #e74c3c; /* Цвет фона */
+  transition: transform 0.5s; /* Переход для перемещения */
+}
+
+.translate:hover {
+  transform: translateX(20px); /* Перемещение вправо при наведении */
+}
+
+/* Вращение */
+.rotate {
+  background-color: #2ecc71; /* Цвет фона */
+  transition: transform 0.5s; /* Переход для вращения */
+}
+
+.rotate:hover {
+  transform: rotate(15deg); /* Вращение при наведении */
+}
+
+/* Наклон */
+.skew {
+  background-color: #f39c12; /* Цвет фона */
+  transition: transform 0.5s; /* Переход для наклона */
+}
+
+.skew:hover {
+  transform: skewX(15deg); /* Наклон по оси X при наведении */
+}
+
+/* Центрирование элементов (с использованием flexbox) */
+.center {
+  background-color: #9b59b6; /* Цвет фона */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0.5rem;
+}
+
+.center:hover {
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Центрирование при наведении (псевдоцентрирование)*/
+}

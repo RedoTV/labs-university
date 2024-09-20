@@ -1,0 +1,113 @@
+/* 3 задание */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: min-content; /* Задает минимальную высоту контейнера */
+}
+
+.content {
+  flex: 1; /* Позволяет контенту занимать всё доступное пространство */
+  padding: 20px; /* Добавляем отступы вокруг контента */
+}
+
+.textBlock {
+  border: 1px solid #ccc;
+  padding: 16px;
+  width: 50%; /* Ширина по умолчанию */
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Медиазапросы для изменения стилей */
+@media (max-width: 600px) {
+  .textBlock {
+    width: 90%; /* Ширина блока на маленьких экранах */
+    background-color: hsl(
+      200,
+      70%,
+      90%
+    ); /* Светлый фон для маленьких экранов */
+    border-radius: 5px; /* Изменение радиуса для маленьких экранов */
+  }
+
+  .truncate {
+    white-space: normal; /* Позволяет переносить текст */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляет многоточие */
+  }
+}
+
+@media (min-width: 601px) {
+  .textBlock {
+    background-color: hsl(200, 70%, 50%); /* Темный фон для больших экранов */
+    border-radius: 15px; /* Изменение радиуса для больших экранов */
+  }
+}
+
+/* Стили для кнопок с использованием селекторов атрибутов */
+[data-type="primary"] {
+  background-color: hsl(210, 100%, 50%);
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+[data-type="secondary"] {
+  background-color: hsl(120, 100%, 50%);
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+[data-type="mid-value"] {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+[data-type="customary"] {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+/* Стили для списка */
+.list {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding-left: 0; /* Убираем отступ слева */
+}
+
+.listItem:first-child {
+  color: red; /* Изменение первого элемента */
+}
+
+.listItem:last-child {
+  color: blue; /* Изменение последнего элемента */
+}
+
+.listItem:nth-child(even) {
+  background-color: lightgray; /* Четные элементы */
+}
+
+.listItem:nth-child(odd) {
+  background-color: white; /* Нечетные элементы */
+}
+
+.specific-item {
+  color: green; /* Заданный элемент */
+}
+
+/* Способы отображения с border-radius и цветами */
+.roundedCorners {
+  border-radius: 15px;
+}
+
+.roundedSmooth {
+  border-radius: 50%;
+}
+
+.roundedEllipse {
+  border-radius: 30% / 50%;
+}

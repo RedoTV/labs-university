@@ -1,0 +1,72 @@
+/* Задание 4 */
+/* Объемная надпись */
+.volumeText {
+  font-size: 50px;
+  color: #089dcb;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5), 4px 4px 0 rgba(0, 0, 0, 0.4),
+    6px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Буквица (первый способ) */
+.dropCap {
+  font-size: 24px;
+}
+
+.initial {
+  font-size: 48px;
+  float: left;
+  line-height: 1;
+  margin-right: 8px;
+}
+
+/* Буквица (второй способ) */
+.dropCapShadow {
+  font-size: 24px;
+}
+
+.dropCapShadow .initial {
+  font-size: 48px;
+  float: left;
+  line-height: 1;
+  margin-right: 8px;
+  text-shadow: -1px -1px rgba(255, 255, 255, 0.7),
+    -2px -2px rgba(255, 255, 255, 0.5);
+}
+
+/* Наложение нескольких теней на текст */
+.multipleShadows {
+  font-size: 30px;
+  text-shadow: 1px 1px rgba(255, 0, 0, 0.5), -1px -1px rgba(0, 255, 0, 0.5),
+    -2px -2px rgba(0, 0, 255, 0.5);
+}
+
+/* Градиентные фоны */
+.gradient1 {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  padding: 20px;
+  color: white;
+}
+
+.gradient2 {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 20px;
+  color: white;
+}
+
+.gradient3 {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  padding: 20px;
+}
+
+/* Фильтры для изображений */
+.filter1 {
+  filter: grayscale(100%);
+}
+
+.filter2 {
+  filter: sepia(100%);
+}
+
+.filter3 {
+  filter: blur(5px);
+}
