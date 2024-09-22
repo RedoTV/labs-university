@@ -12,11 +12,12 @@
   font-size: 24px;
 }
 
-.initial {
+.dropCap::first-letter {
   font-size: 48px;
   float: left;
   line-height: 1;
   margin-right: 8px;
+  text-shadow: 1px 1px rgba(59, 41, 255, 0.7), -2px -2px rgba(34, 255, 0, 0.5);
 }
 
 /* Буквица (второй способ) */
@@ -29,8 +30,7 @@
   float: left;
   line-height: 1;
   margin-right: 8px;
-  text-shadow: -1px -1px rgba(255, 255, 255, 0.7),
-    -2px -2px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px rgba(255, 41, 41, 0.7), -2px -2px rgba(34, 255, 0, 0.5);
 }
 
 /* Наложение нескольких теней на текст */

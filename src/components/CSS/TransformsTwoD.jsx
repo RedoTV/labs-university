@@ -14,6 +14,10 @@ export default function TransformsTwoD() {
                 <div className={styles.translate}>Перемещение</div>
                 <div className={styles.rotate}>Вращение</div>
                 <div className={styles.skew}>Наклон</div>
+
+            </div>
+
+            <div className={styles.transformContainer}>
                 <div className={styles.center}>Центрирование</div>
             </div>
         </div>

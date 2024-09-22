@@ -8,8 +8,7 @@ export default function ShadowGradient() {
 
             {/* Буквица (первый способ) */}
             <div className={styles.dropCap}>
-                <span className={styles.initial}>Б</span>
-                <span>уквица с использованием псевдокласса и теней.</span>
+                Буквица с использованием псевдокласса и теней.
             </div>
 
             {/* Буквица (второй способ) */}
