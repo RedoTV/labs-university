@@ -105,18 +105,24 @@
 }
 
 /* Центрирование элементов (с использованием flexbox) */
-.center {
-  background-color: #9b59b6; /* Цвет фона */
+/* Центрирование элементов (с использованием flexbox) */
+.container_center {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  padding: 0.5rem;
 }
 
-.center:hover {
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Центрирование при наведении (псевдоцентрирование)*/
+/* Центрирование элементов */
+.center {
+  margin: 0;
+  background-color: #9b59b6; /* Цвет фона */
+  display: flex;
+  cursor: pointer;
+  justify-content: center; /* Center content inside */
+  transition: transform 0.5s ease; /* Add transition for transform */
+  height: auto;
+  padding: 0.5rem;
+  transform: translateX(0); /* Initial position */
+}
+
+.center.active {
+  transform: translateX(calc(-50% + 50vw)); /* Move to center when active */
 }

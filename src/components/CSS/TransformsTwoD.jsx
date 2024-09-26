@@ -1,6 +1,17 @@
+import { useState } from 'react';
 import styles from './transforms.module.css'
 
 export default function TransformsTwoD() {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = () => {
+        setIsActive(true);
+
+        setTimeout(() => {
+            setIsActive(false);
+        }, 1000);
+    };
+
     return (<>
         <div className={styles.container}>
             {/* Переходы */}
@@ -17,9 +28,15 @@ export default function TransformsTwoD() {
 
             </div>
 
-            <div className={styles.transformContainer}>
-                <div className={styles.center}>Центрирование</div>
+            <div className={styles.container_center}>
+                <div
+                    className={`${styles.center} ${isActive ? styles.active : ''}`}
+                    onClick={handleClick}
+                >
+                    Центрирование
+                </div>
             </div>
+
         </div>
     </>)
 }

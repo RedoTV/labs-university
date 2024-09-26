@@ -1,0 +1,24 @@
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(100, 10px); /* Размер клетки 10px */
+  grid-template-rows: repeat(100, 10px);
+  gap: 1px;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.cell.filled {
+  background-color: black;
+}
