@@ -42,6 +42,8 @@
   display: inline-flex;
   padding: 0;
   gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 10px;
 }
 
 .right_block {

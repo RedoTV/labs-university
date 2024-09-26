@@ -16,10 +16,16 @@
   width: 50%; /* Ширина по умолчанию */
 }
 
+.textBlock {
+  width: 90%; /* Ширина блока на маленьких экранах */
+  background-color: hsl(200, 70%, 90%); /* Светлый фон для маленьких экранов */
+  border-radius: 5px; /* Изменение радиуса для маленьких экранов */
+}
+
 .truncate {
+  white-space: normal; /* Позволяет переносить текст */
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; /* Добавляет многоточие */
 }
 
 /* Медиазапросы для изменения стилей */
@@ -35,9 +41,9 @@
   }
 
   .truncate {
-    white-space: normal; /* Позволяет переносить текст */
     overflow: hidden;
-    text-overflow: ellipsis; /* Добавляет многоточие */
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
