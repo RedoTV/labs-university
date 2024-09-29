@@ -1,24 +1,81 @@
-h1 {
-  color: #333;
+.outerContainer {
+  display: flex;
+  justify-content: center; /* Центрируем содержимое */
+  align-items: center;
+  flex-direction: column; /* Центрируем по вертикали */
   margin-bottom: 20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(100, 10px); /* Размер клетки 10px */
-  grid-template-rows: repeat(100, 10px);
-  gap: 1px;
-  margin: 0 auto;
+.crosswordContainer {
+  display: flex;
+  flex-direction: column; /* Установите направление на столбцы */
+  background-color: rgba(128, 128, 128, 0.884);
 }
 
-.cell {
-  width: 10px;
-  height: 10px;
+.flexRow {
+  display: flex;
+}
+
+.crosswordGrid {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  border: 1px solid #ddd;
+}
+
+.crosswordRow {
+  display: flex;
+}
+
+.crosswordCell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
   cursor: pointer;
 }
 
-.cell.filled {
-  background-color: black;
+.filled {
+  background-color: black; /* Цвет заполненной ячейки */
+}
+
+.columnHints {
+  background-color: grey;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  margin-left: auto;
+}
+
+.rowHints {
+  background-color: grey;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.colClue {
+  display: flex;
+  flex-direction: column;
+  align-self: self-end;
+}
+
+.rowClue {
+  display: flex;
+  align-self: self-end;
+}
+
+.clue {
+  border: 1px solid black;
+  width: 30px; /* Устанавливаем ширину равной ширине клетки */
+  height: 30px; /* Устанавливаем высоту равной высоте клетки */
+  text-align: center;
+  vertical-align: middle;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  margin-right: 10px;
 }
