@@ -27,28 +27,37 @@ export default function Forms() {
             <tr>
                 <td>${formData.shopName}</td>
                 <td>${formData.shopAddress}</td>
+                <td>${formData.managerSurname}</td>
+                <td>${formData.managerPhone}</td>
             </tr>
         `;
-        document.getElementById('outputTable').insertAdjacentHTML('beforeend', tableRow);
+        document.getElementById('outputTableShop').insertAdjacentHTML('beforeend', tableRow);
     };
 
     const handleSubmitPersonal = (e) => {
         e.preventDefault();
         const tableRow = `
             <tr>
-                <td>${formData.shopName}</td>
-                <td>${formData.shopAddress}</td>
-                <td>${formData.managerSurname}</td>
-                <td>${formData.managerPhone}</td>
                 <td>${formData.employeeSurname}</td>
                 <td>${formData.employeePosition}</td>
                 <td>${formData.employeeBirthYear}</td>
+                <td>${formData.employeeHomeAddress}</td>
+                <td>${formData.employeePhone}</td>
+            </tr>
+        `;
+        document.getElementById('outputTablePersonal').insertAdjacentHTML('beforeend', tableRow);
+    };
+
+    const handleSubmitProducts = (e) => {
+        e.preventDefault();
+        const tableRow = `
+            <tr>
                 <td>${formData.productName}</td>
                 <td>${formData.productQuantity}</td>
                 <td>${formData.productPrice}</td>
             </tr>
         `;
-        document.getElementById('outputTable').insertAdjacentHTML('beforeend', tableRow);
+        document.getElementById('outputTableProducts').insertAdjacentHTML('beforeend', tableRow);
     };
 
     return (
@@ -82,13 +91,6 @@ export default function Forms() {
                                 required
                             />
                         </label>
-                    </fieldset>
-                    <button type="submit" className={styles.submitButton}>Отправить</button>
-
-
-                    {/* Персонал */}
-                    <fieldset>
-                        <legend>Персонал</legend>
                         <label>
                             Фамилия заведующего:
                             <input
@@ -111,6 +113,15 @@ export default function Forms() {
                                 className={styles.input}
                             />
                         </label>
+                        <button type="submit" className={styles.submitButton}>Отправить</button>
+
+                    </fieldset>
+                </form>
+
+                <form onSubmit={handleSubmitPersonal} className={styles.form}>
+                    {/* Персонал */}
+                    <fieldset>
+                        <legend>Персонал</legend>
 
                         <label>
                             Фамилия сотрудника:
@@ -148,6 +159,17 @@ export default function Forms() {
                             />
                         </label>
                         <label>
+                            Адрес сотрудника:
+                            <input
+                                type="text"
+                                name="employeeHomeAddress"
+                                value={formData.employeeHomeAddress}
+                                onChange={handleChange}
+                                placeholder="Адрес"
+                                className={styles.input}
+                            />
+                        </label>
+                        <label>
                             Телефон сотрудника:
                             <input
                                 type="tel"
@@ -158,10 +180,11 @@ export default function Forms() {
                                 className={styles.input}
                             />
                         </label>
+                        <button type="submit" className={styles.submitButton}>Отправить</button>
                     </fieldset>
-                    <button type="submit" className={styles.submitButton}>Отправить</button>
+                </ form>
 
-
+                <form onSubmit={handleSubmitProducts} className={styles.form}>
                     {/* Товар */}
                     <fieldset>
                         <legend>Товар</legend>
@@ -200,42 +223,52 @@ export default function Forms() {
                                 step="0.01"
                             />
                         </label>
+                        <button type="submit" className={styles.submitButton}>Отправить</button>
                     </fieldset>
 
-                    <button type="submit" className={styles.submitButton}>Отправить</button>
-                </form>
+                </form >
 
+            </div >
+            <div className={styles.container}>
+                < table id="outputTableShop" className={styles.table} >
+                    <thead>
+                        <tr>
+                            <th>Название магазина</th>
+                            <th>Адрес магазина</th>
+                            <th>Фамилия заведующего</th>
+                            <th>Телефон заведующего</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table >
 
+                {/* Вывод таблицы */}
+                < table id="outputTablePersonal" className={styles.table} >
+                    <thead>
+                        <tr>
+                            <th>Фамилия сотрудника</th>
+                            <th>Должность сотрудника</th>
+                            <th>Год рождения сотрудника</th>
+                            <th>Адрес сотрудника</th>
+                            <th>Телефон сотрудника</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table >
+
+                {/* Вывод таблицы */}
+                < table id="outputTableProducts" className={styles.table} >
+                    <thead>
+                        <tr>
+                            <th>Наименование товара</th>
+                            <th>Количество</th>
+                            <th>Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table >
             </div>
-            {/* Вывод таблицы */}
-            <table id="outputTable" className={styles.table}>
-                <thead>
-                    <tr>
-                        <th>Название магазина</th>
-                        <th>Адрес магазина</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
 
-            {/* Вывод таблицы */}
-            <table id="outputTable" className={styles.table}>
-                <thead>
-                    <tr>
-                        <th>Название магазина</th>
-                        <th>Адрес магазина</th>
-                        <th>Фамилия заведующего</th>
-                        <th>Телефон заведующего</th>
-                        <th>Фамилия сотрудника</th>
-                        <th>Должность сотрудника</th>
-                        <th>Год рождения сотрудника</th>
-                        <th>Наименование товара</th>
-                        <th>Количество</th>
-                        <th>Цена</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
         </>
     );
 }
