@@ -101,8 +101,17 @@
   background-color: white; /* Нечетные элементы */
 }
 
-.specific-item {
-  color: green; /* Заданный элемент */
+.listItem2:nth-child(5n + 1),
+.listItem2:nth-child(5n + 2) {
+  background-color: yellow; /* Изменение двух элементов через три */
+}
+
+.listItem2:nth-child(4) {
+  background-color: green; /* Изменение только 4-го элемента */
+}
+
+.listItem3:not(:nth-child(6)) {
+  background-color: pink; /* Изменение всех, кроме 6-го */
 }
 
 /* Способы отображения с border-radius и цветами */

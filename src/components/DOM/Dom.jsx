@@ -4,7 +4,7 @@ import styles from './Dom.module.css'
 
 export default function Dom() {
     const [currentTask, setCurrentTask] = useState(-1)
-
+    const [move, setMove] = useState(100)
     const tasks = ['Задание 1', 'Задание 2',]
 
     const [dialogResult, setDialogResult] = useState('');
@@ -13,7 +13,7 @@ export default function Dom() {
     const navigate = useNavigate();
 
     const openNewWindow = () => {
-        window.open('https://example.com', '_blank');
+        window.open('http://localhost:5173/dom/', '_blank', 'width=800,height=600');
     };
 
     const showAlert = () => {
@@ -31,12 +31,13 @@ export default function Dom() {
     };
 
     const resizeWindow = () => {
-        window.resizeTo(800, 600);
-        setWindowSize({ width: 800, height: 600 });
+        window.resizeTo(600, 600);
+        setWindowSize({ width: 600, height: 600 });
     };
 
     const moveWindow = () => {
-        window.moveTo(100, 100);
+        window.moveTo(move, move);
+        setMove(move + 100);
     };
 
     const navigateBack = () => {
@@ -110,12 +111,12 @@ export default function Dom() {
 
             <div>
                 <h2>Изменение содержимого:</h2>
-                <div id="content1">Элемент 1</div>
-                <div id="content2">Элемент 2</div>
-                <div id="content3">Элемент 3</div>
+                <h6 id="content1">Элемент 1</h6>
+                <h5 id="content2">Элемент 2</h5>
+                <h4 id="content3">Элемент 3</h4>
                 <button onClick={() => changeContent('content1', 'Новый текст для элемента 1')}>Изменить элемент 1</button>
-                <button onClick={() => changeContent('content2', 'Новый текст для элемента 2')}>Изменить элемент 2</button>
-                <button onClick={() => changeContent('content3', 'Новый текст для элемента 3')}>Изменить элемент 3</button>
+                <button onClick={() => changeContent('content2', `ширина экрана: ${windowSize.width}`)}>Изменить элемент 2</button>
+                <button onClick={() => changeContent('content3', ["Apple", "Orange"].join(' '))}>Изменить элемент 3</button>
             </div>
 
             <div>

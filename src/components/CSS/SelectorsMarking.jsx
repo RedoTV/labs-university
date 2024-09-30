@@ -32,6 +32,32 @@ export default function SelectorsMarking() {
                     <li className={styles.listItem}>Item 10</li>
                 </ul>
 
+                <ul className={styles.list}>
+                    <li className={styles.listItem2}>Item 1</li>
+                    <li className={styles.listItem2}>Item 2</li>
+                    <li className={styles.listItem2}>Item 3</li>
+                    <li className={styles.listItem2}>Item 4</li>
+                    <li className={styles.listItem2}>Item 5</li>
+                    <li className={styles.listItem2}>Item 6</li>
+                    <li className={styles.listItem2}>Item 7</li>
+                    <li className={styles.listItem2}>Item 8</li>
+                    <li className={styles.listItem2}>Item 9</li>
+                    <li className={styles.listItem2}>Item 10</li>
+                </ul>
+
+                <ul className={styles.list}>
+                    <li className={styles.listItem3}>Item 1</li>
+                    <li className={styles.listItem3}>Item 2</li>
+                    <li className={styles.listItem3}>Item 3</li>
+                    <li className={styles.listItem3}>Item 4</li>
+                    <li className={styles.listItem3}>Item 5</li>
+                    <li className={styles.listItem3}>Item 6</li>
+                    <li className={styles.listItem3}>Item 7</li>
+                    <li className={styles.listItem3}>Item 8</li>
+                    <li className={styles.listItem3}>Item 9</li>
+                    <li className={styles.listItem3}>Item 10</li>
+                </ul>
+
                 {/* Блоки с разными способами отображения */}
                 <div className={`${styles.textBlock} ${styles.roundedCorners}`}>Rounded Corners</div>
                 <div className={`${styles.textBlock} ${styles.roundedSmooth}`}>Rounded Smooth</div>
