@@ -48,7 +48,14 @@ function FloatingName() {
                 </h1>
 
             </div>
-            <div>
+            <div style={
+                {
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    marginBottom: '30px',
+                    width: 'fit-content'
+                }
+            }>
                 <button onClick={moveUp}>Вверх</button>
                 <button onClick={moveDown}>Вниз</button>
                 <button onClick={moveLeft}>Влево</button>

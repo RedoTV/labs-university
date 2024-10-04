@@ -52,6 +52,8 @@ function MovingName() {
             border: '2px solid black',
             position: 'relative',
             overflow: 'hidden',
+            marginLeft: 'auto',
+            marginRight: 'auto'
         }}>
             <h1 style={{
                 position: 'absolute', left: `${position.x}px`, top: `${position.y}px`,
