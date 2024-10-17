@@ -1,0 +1,57 @@
+[
+    {
+      "fullName": "Иванов Иван",
+      "faculty": "Физика",
+      "group": "Ф-101",
+      "athletics": 8,
+      "volleyball": 9,
+      "basketball": 7,
+      "swimming": 6
+    },
+    {
+      "fullName": "Петров Петр",
+      "faculty": "Математика",
+      "group": "М-102",
+      "athletics": 5,
+      "volleyball": 6,
+      "basketball": 4,
+      "swimming": 5
+    },
+    {
+      "fullName": "Сидоров Сидор",
+      "faculty": "Химия",
+      "group": "Х-203",
+      "athletics": 10,
+      "volleyball": 10,
+      "basketball": 9,
+      "swimming": 10
+    },
+    {
+      "fullName": "Кузнецова Анна",
+      "faculty": "Биология",
+      "group": "Б-104",
+      "athletics": 6,
+      "volleyball": 7,
+      "basketball": 5,
+      "swimming": 4
+    },
+    {
+      "fullName": "Смирнов Сергей",
+      "faculty": "История",
+      "group": "И-105",
+      "athletics": 7,
+      "volleyball": 8,
+      "basketball": 6,
+      "swimming": 5
+    },
+    {
+      "fullName": "Михайлова Светлана",
+      "faculty": "Иностранные языки",
+      "group": "Я-106",
+      "athletics": 9,
+      "volleyball": 8,
+      "basketball": 10,
+      "swimming": 9
+    }
+  ]
+  

@@ -1,0 +1,150 @@
+.header_container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main_container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form button {
+  grid-column: span 4; /* Button spans the entire width */
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50; /* Green */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #e7f3fe; /* Light blue on row hover */
+}
+
+.table input {
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.table button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff; /* Blue */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.table button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.sortButtons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.sortButtons > button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4c7aaf; /* Green */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sortButtons button:hover {
+  background-color: #2950ff; /* Darker teal on hover */
+}
+
+.search_container {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.search_input {
+  padding: 8px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sorting_header {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Стили для кнопки "Обработка" */
+.processButton {
+  background-color: #88910e;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+/* Стили при наведении */
+.processButton:hover {
+  background-color: #5d630b;
+}
