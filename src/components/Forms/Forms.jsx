@@ -31,16 +31,20 @@ export default function Forms() {
 
     const handleSubmitShop = (e) => {
         e.preventDefault();
-        const tableRow = `
+        let tableRow = `
             <tr>
                 <td>${formData.shopName}</td>
                 <td>${formData.shopAddress}</td>
                 <td>${formData.managerSurname}</td>
                 <td>${formData.managerPhone}</td>
                 <td>${formData.managerConsent ? 'Да' : 'Нет'}</td>
-                <td>${formData.managerGender === 'male' ? 'Мужской' : 'Женский'}</td>
-            </tr>
         `;
+        if (formData.managerConsent)
+            tableRow += `<td>${formData.managerGender === 'male' ? 'Мужской' : 'Женский'}</td>`;
+        else
+            tableRow += "<td>null</td>"
+
+        tableRow += '</tr>'
         document.getElementById('outputTableShop').insertAdjacentHTML('beforeend', tableRow);
     };
 
@@ -154,6 +158,7 @@ export default function Forms() {
                                 placeholder="Введите название"
                                 className={styles.input}
                                 required
+                                autoComplete='off'
                             />
                         </label>
                         <label>
@@ -219,7 +224,7 @@ export default function Forms() {
                                 onChange={handleChange}
                             /> Женский
                         </label>
-                        <button type="submit" className={styles.submitButton}>Отправить</button>
+                        <button type="submit" className={styles.submitButton} style={{ backgroundColor: 'red' }}>Отправить</button>
                     </fieldset>
                 </form>
 
@@ -286,7 +291,7 @@ export default function Forms() {
                                 required
                             />
                         </label>
-                        <button type="submit" className={styles.submitButton}>Отправить</button>
+                        <button type="submit" className={styles.submitButton} style={{ backgroundColor: 'blue' }} > Отправить</button>
                     </fieldset>
                 </form>
 
@@ -345,13 +350,13 @@ export default function Forms() {
                             />
                             <span>{formData.productRating}</span>
                         </label>
-                        <button type="submit" className={styles.submitButton}>Отправить</button>
+                        <button type="submit" className={styles.submitButton} style={{ backgroundColor: 'grey' }}>Отправить</button>
                     </fieldset>
                 </form>
-            </div>
+            </div >
 
             {/* Таблицы */}
-            <div className={styles.container}>
+            < div className={styles.container} >
                 <table id="outputTableShop" className={styles.table}>
                     <thead>
                         <tr>
@@ -390,7 +395,7 @@ export default function Forms() {
                     </thead>
                     <tbody></tbody>
                 </table>
-            </div>
+            </div >
         </>
     );
 }

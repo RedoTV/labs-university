@@ -2,20 +2,20 @@ import { useState } from 'react';
 import styles from './object.module.css';
 
 const initialStudents = [
-  { fullName: 'Иванов Иван', faculty: 'Математика', group: 'М-102', athletics: 4, volleyball: 5, basketball: 6, swimming: 7 },
-  { fullName: 'Петров Петр', faculty: 'Физика', group: 'Ф-101', athletics: 5, volleyball: 6, basketball: 7, swimming: 8 },
-  { fullName: 'Сидоров Сидор', faculty: 'Химия', group: 'Х-201', athletics: 8, volleyball: 9, basketball: 7, swimming: 8 },
-  { fullName: 'Кузнецов Алексей', faculty: 'Информатика', group: 'И-301', athletics: 6, volleyball: 6, basketball: 6, swimming: 5 },
-  { fullName: 'Семенов Семен', faculty: 'Биология', group: 'Б-202', athletics: 3, volleyball: 4, basketball: 5, swimming: 6 },
-  { fullName: 'Николаев Николай', faculty: 'Философия', group: 'Ф-401', athletics: 7, volleyball: 8, basketball: 9, swimming: 10 },
-  { fullName: 'Федоров Федор', faculty: 'Экономика', group: 'Э-103', athletics: 5, volleyball: 5, basketball: 5, swimming: 5 },
-  { fullName: 'Григорьев Григорий', faculty: 'Социология', group: 'С-201', athletics: 4, volleyball: 3, basketball: 4, swimming: 2 },
-  { fullName: 'Егоров Егорыч', faculty: 'История', group: 'И-104', athletics: 10, volleyball: 10, basketball: 10, swimming: 10 },
-  { fullName: 'Алексеева Анастасия', faculty: 'Искусств', group: 'И-202', athletics: 9, volleyball: 8, basketball: 7, swimming: 6 },
-  { fullName: 'Павлова Павла', faculty: 'Право', group: 'П-305', athletics: 6, volleyball: 6, basketball: 8, swimming: 9 },
-  { fullName: 'Лебедев Леонид', faculty: 'Психология', group: 'ПС-403', athletics: 4, volleyball: 7, basketball: 8, swimming: 6 },
-  { fullName: 'Тихонов Тимур', faculty: 'Медицина', group: 'М-108', athletics: 7, volleyball: 9, basketball: 9, swimming: 8 },
-  { fullName: 'Васильев Василий', faculty: 'Физическая культура', group: 'ФК-301', athletics: 9, volleyball: 10, basketball: 10, swimming: 10 },
+  { surname: 'Иванов', faculty: 'Математика', group: 'М-102', athletics: 4, volleyball: 5, basketball: 6, swimming: 7 },
+  { surname: 'Петров', faculty: 'Физика', group: 'Ф-101', athletics: 5, volleyball: 6, basketball: 7, swimming: 8 },
+  { surname: 'Сидоров', faculty: 'Химия', group: 'Х-201', athletics: 8, volleyball: 9, basketball: 7, swimming: 8 },
+  { surname: 'Кузнецов', faculty: 'Информатика', group: 'И-301', athletics: 6, volleyball: 6, basketball: 6, swimming: 5 },
+  { surname: 'Семенов', faculty: 'Биология', group: 'Б-202', athletics: 3, volleyball: 4, basketball: 5, swimming: 6 },
+  { surname: 'Николаев', faculty: 'Философия', group: 'Ф-401', athletics: 7, volleyball: 8, basketball: 9, swimming: 10 },
+  { surname: 'Федоров', faculty: 'Экономика', group: 'Э-103', athletics: 5, volleyball: 5, basketball: 5, swimming: 5 },
+  { surname: 'Григорьев', faculty: 'Социология', group: 'С-201', athletics: 4, volleyball: 3, basketball: 4, swimming: 2 },
+  { surname: 'Егоров', faculty: 'История', group: 'И-104', athletics: 10, volleyball: 10, basketball: 10, swimming: 10 },
+  { surname: 'Алексеева', faculty: 'Искусств', group: 'И-202', athletics: 9, volleyball: 8, basketball: 7, swimming: 6 },
+  { surname: 'Павлова', faculty: 'Право', group: 'П-305', athletics: 6, volleyball: 6, basketball: 8, swimming: 9 },
+  { surname: 'Лебедев', faculty: 'Психология', group: 'ПС-403', athletics: 4, volleyball: 7, basketball: 8, swimming: 6 },
+  { surname: 'Тихонов', faculty: 'Медицина', group: 'М-108', athletics: 7, volleyball: 9, basketball: 9, swimming: 8 },
+  { surname: 'Васильев', faculty: 'Физическая культура', group: 'ФК-301', athletics: 9, volleyball: 10, basketball: 10, swimming: 10 },
 ];
 
 export default function Object() {
@@ -23,7 +23,7 @@ export default function Object() {
   const [filteredStudents, setFilteredStudents] = useState(students);
   const [excellentStudents, setExcellentStudents] = useState([]); // Состояние для отличных студентов
   const [formData, setFormData] = useState({
-    fullName: '',
+    surname: '',
     faculty: '',
     group: '',
     athletics: 0,
@@ -65,7 +65,7 @@ export default function Object() {
   const validateForm = () => {
     const { athletics, volleyball, basketball, swimming } = formData;
     return (
-      formData.fullName &&
+      formData.surname &&
       formData.faculty &&
       formData.group &&
       athletics >= 0 && athletics <= 10 &&
@@ -77,7 +77,7 @@ export default function Object() {
 
   const clearForm = () => {
     setFormData({
-      fullName: '',
+      surname: '',
       faculty: '',
       group: '',
       athletics: 0,
@@ -137,7 +137,7 @@ export default function Object() {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
     const filtered = students.filter((student) =>
-      student.fullName.toLowerCase().includes(query)
+      student.surname.toLowerCase().includes(query)
     );
     setFilteredStudents(filtered);
   };
@@ -164,13 +164,13 @@ export default function Object() {
           value={searchQuery}
           onChange={handleSearchChange}
           className={styles.search_input}
-          placeholder="Введите Ф.И.О. для поиска"
+          placeholder="Введите Фамилию для поиска"
         />
       </div>
 
       <div className={styles.main_container}>
         <form onSubmit={handleSubmit} className={styles.form}>
-          <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Ф.И.О." required />
+          <input type="text" name="surname" value={formData.surname} onChange={handleInputChange} placeholder="Фамилия" required />
           <input type="text" name="faculty" value={formData.faculty} onChange={handleInputChange} placeholder="Факультет" required />
           <input type="text" name="group" value={formData.group} onChange={handleInputChange} placeholder="Группа" required />
           <input type="number" name="athletics" value={formData.athletics} onChange={handleInputChange} placeholder="Легкая атлетика" min="0" max="10" required />
@@ -184,7 +184,7 @@ export default function Object() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th onClick={() => handleSort('fullName')} className={styles.sorting_header}>Ф.И.О.</th>
+              <th onClick={() => handleSort('surname')} className={styles.sorting_header}>Фамилия</th>
               <th onClick={() => handleSort('faculty')} className={styles.sorting_header}>Факультет</th>
               <th onClick={() => handleSort('group')} className={styles.sorting_header}>Группа</th>
               <th onClick={() => handleSort('athletics')} className={styles.sorting_header}>Легкая атлетика</th>
@@ -200,7 +200,7 @@ export default function Object() {
               <tr key={index}>
                 {editIndex === index ? (
                   <>
-                    <td><input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} /></td>
+                    <td><input type="text" name="surname" value={formData.surname} onChange={handleInputChange} /></td>
                     <td><input type="text" name="faculty" value={formData.faculty} onChange={handleInputChange} /></td>
                     <td><input type="text" name="group" value={formData.group} onChange={handleInputChange} /></td>
                     <td><input type="number" name="athletics" value={formData.athletics} onChange={handleInputChange} min="0" max="10" /></td>
@@ -210,7 +210,7 @@ export default function Object() {
                   </>
                 ) : (
                   <>
-                    <td>{student.fullName}</td>
+                    <td>{student.surname}</td>
                     <td>{student.faculty}</td>
                     <td>{student.group}</td>
                     <td>{student.athletics}</td>
@@ -224,9 +224,9 @@ export default function Object() {
                   {editIndex === index ? (
                     <button onClick={() => setEditIndex(null)}>Отменить</button>
                   ) : (
-                    <button onClick={() => handleEdit(index)}>Редактировать</button>
+                    <button className={styles.edit_btn} onClick={() => handleEdit(index)}>Редактировать</button>
                   )}
-                  <button onClick={() => handleDelete(index)}>Удалить</button>
+                  <button className={styles.delete_btn} onClick={() => handleDelete(index)}>Удалить</button>
                 </td>
               </tr>
             ))}
@@ -244,7 +244,7 @@ export default function Object() {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>Ф.И.О.</th>
+                  <th>Фамилия</th>
                   <th>Факультет</th>
                   <th>Группа</th>
                   <th>Легкая атлетика</th>
@@ -257,7 +257,7 @@ export default function Object() {
               <tbody>
                 {excellentStudents.map((student, index) => (
                   <tr key={index}>
-                    <td>{student.fullName}</td>
+                    <td>{student.surname}</td>
                     <td>{student.faculty}</td>
                     <td>{student.group}</td>
                     <td>{student.athletics}</td>
